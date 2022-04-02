@@ -11,6 +11,11 @@ if (!localStorage.getItem('isInitialised')) {
 }
 
 /**
+ * SUBSCRIBERS
+ */
+let subscribers = [];
+
+/**
  * API METHODS 
  */
 export function getProducts() {
@@ -20,12 +25,14 @@ export function getProducts() {
 export function addProduct(product) {
     const products = JSON.parse(localStorage.getItem('products'));
     localStorage.setItem('products', JSON.stringify( [...products, product] ));
+    notifySubscribers();
 }
 
 export function deleteProduct(id) {
     const products = getProducts();
     const filtered = products.filter((p) => id !== p.id);
     localStorage.setItem('products', JSON.stringify(filtered));
+    notifySubscribers();
 }
 
 export function updateProduct(product) {
@@ -37,4 +44,19 @@ export function updateProduct(product) {
     }
 
     localStorage.setItem('products', JSON.stringify(products));
+    notifySubscribers();
+}
+
+function notifySubscribers() {
+    subscribers.forEach(s => s());
+}
+
+export function subscribeOnProductsChange(callback) {
+    subscribers.push(callback);
+
+    const unsubscribe = () => {
+        subscribers = subscribers.filter(fn => fn !== callback);
+    };
+
+    return unsubscribe;
 }
