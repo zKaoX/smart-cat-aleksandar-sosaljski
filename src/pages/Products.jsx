@@ -4,7 +4,7 @@ function Products() {
     const navigate = useNavigate();
 
     function goToAdd() { navigate('/products/add'); }
-    function goToEdit() { navigate('/product/1/edit'); }
+    function goToEdit() { navigate('/products/1/edit'); }
 
     return (
         <>
