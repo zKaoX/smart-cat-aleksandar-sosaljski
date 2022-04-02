@@ -1,5 +1,5 @@
-import { useState, useEffect, Link } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { getProducts, deleteProduct, addProduct, subscribeOnProductsChange } from '../backend/api';
 
 function Products() {
@@ -30,6 +30,9 @@ function Products() {
     return (
         <>
             <h1>PRODUCTS PAGE</h1>
+            
+            <button onClick={() => navigate('/products/add')}>ADD</button>
+            
             <button onClick={handleAddRandomClick}>ADD RANDOM</button>
             <br/>
             <p>#################</p>
@@ -40,6 +43,7 @@ function Products() {
                         <p>Name: {name}</p>
                         <p>Id: {id}</p>
                         <button onClick={() => handleDeleteProductClick(id)}>DELETE</button>
+                        <button onClick={() => navigate(`/products/${id}/edit`)}>EDIT</button>
                     </>
                 ))
             }
