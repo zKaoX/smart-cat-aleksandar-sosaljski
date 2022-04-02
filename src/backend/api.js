@@ -1,11 +1,18 @@
+
+import { v4 as uuidv4 } from 'uuid';
+
 /**
  * INITIAL DATA 
  */
 if (!localStorage.getItem('isInitialised')) {
     localStorage.setItem('isInitialised', true);
     const products = [
-        { id: 1, name: 'product1', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: Date.now() },
-        { id: 2, name: 'product2', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: Date.now() },
+        { id: uuidv4(), name: 'product1', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: Date.now() },
+        { id: uuidv4(), name: 'product2', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: Date.now() },
+        { id: uuidv4(), name: 'product3', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: Date.now() },
+        { id: uuidv4(), name: 'product4', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: Date.now() },
+        { id: uuidv4(), name: 'product5', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: Date.now() },
+        { id: uuidv4(), name: 'product6', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: Date.now() },
     ];
     localStorage.setItem('products', JSON.stringify(products));
 }
@@ -22,7 +29,8 @@ export function getProducts() {
     return JSON.parse(localStorage.getItem('products'));
 }
 
-export function addProduct(product) {
+export function addProduct({ name, manufacturer, price, expiryDate }) {
+    const product =  { id: uuidv4(), name, manufacturer, price, expiryDate }
     const products = JSON.parse(localStorage.getItem('products'));
     localStorage.setItem('products', JSON.stringify( [...products, product] ));
     notifySubscribers();

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Link } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getProducts, deleteProduct, addProduct, subscribeOnProductsChange } from '../backend/api';
 
@@ -20,7 +20,6 @@ function Products() {
 
     function handleAddRandomClick() {
         addProduct({ 
-            id: Math.random().toString(),
             name: Math.random().toString(),
             manufacturer: {id: 1, name: 'manufacturer1'},
             price: 1,
@@ -39,6 +38,7 @@ function Products() {
                 products.map(({ id, name }) => (
                     <>
                         <p>Name: {name}</p>
+                        <p>Id: {id}</p>
                         <button onClick={() => handleDeleteProductClick(id)}>DELETE</button>
                     </>
                 ))
