@@ -1,13 +1,64 @@
+/**
+ * GLOBAL
+ */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
+  box-sizing: border-box;
+
+  font-family: Helvetica, Arial, sans-serif;
+}
+ 
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+ 
+
+/**
+ * COMPONENTS
+ */
+/* NAVIGATION - START */
+.navigation {
+  margin: 0;
+  padding: 0.5em;
+  background-color: #5f4b44;
+  list-style-type: none;
+  border-radius: 0.2em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media (min-width: 560px) {
+  .navigation {
+    display: flex;
+  }
 }
+
+.navigation > li {
+  margin-top: 0;
+  text-align: center;
+}
+
+.navigation > li + li  {
+  border-top: 1px solid black;
+}
+
+@media (min-width: 560px) {
+  .navigation > li + li  {
+    border-top: 0px solid black;
+  }
+}
+
+.navigation > li > a {
+  display: block;
+  padding: 0.5em 1em;
+  background-color: #cc6b5a;
+  color: white;
+  text-decoration: none;
+}
+
+.navigation > li > a.active {
+ 
+  text-decoration: underline;
+}
+ /* NAVIGATION - END */
