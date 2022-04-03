@@ -25,7 +25,7 @@ function PieChartAdapter({ data, titleTop }) {
 
     return (
         <div style={{ border: '3px solid rgb(11, 125, 255)', borderRadius: '0.2em'}}>
-            <h4 style={{ textAlign: 'center' }}>{titleTop}</h4>
+            <h4 style={{ textAlign: 'center', marginBottom: '0' }}>{titleTop}</h4>
             <div style={{ width: '400px', height: '400px', margin: '0 auto' }}>
                 <PieChart width={400} height={400}>
                     <Pie

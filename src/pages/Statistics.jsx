@@ -10,14 +10,12 @@ function Statistics() {
                           .sort((p1 ,p2) => p1.value - p2.value);
     
     return (
-        <div>
-            <h1>STATISTICS PAGE</h1>
-            
+        <div className="statistics-page">
             <PieChart 
                 data={manufacturersNumberOfProduts}
                 titleTop="Manufacturer products count"
             />
-            <br/>
+
             <BarChart
                 data={[
                     ...productPricesIncreasing.slice(0, 5),

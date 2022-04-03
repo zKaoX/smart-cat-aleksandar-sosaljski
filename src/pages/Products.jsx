@@ -26,6 +26,7 @@ function Products() {
                         product={p}
                         onEditClick={()  => navigate(`/products/${p.id}/edit`)}
                         onDeleteClick={() => deleteProduct(p.id)}
+                        key={p.id}
                     />
                 ))
             }

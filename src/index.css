@@ -105,3 +105,8 @@ body {
     margin-top: 2em;
     padding-left: 0.5em;
   }
+
+  .statistics-page > * {
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
