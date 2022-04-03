@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getProducts, deleteProduct, addProduct, subscribeOnProductsChange } from '../backend/api';
 
+import Product from '../components/Product';
+
 function Products() {
     const [products, setProducts] = useState( getProducts() );
     const navigate = useNavigate();
@@ -23,28 +25,29 @@ function Products() {
             name: Math.random().toString(),
             manufacturer: {id: 1, name: 'manufacturer1'},
             price: 1,
-            expiryDate: Date.now()
+            expiryDate: new Date(Date.now())
         });
     }
 
     return (
         <>
-            <h1>PRODUCTS PAGE</h1>
+            <h1>PRODUCTS</h1>
             
             <button onClick={() => navigate('/products/add')}>ADD</button>
             
-            <button onClick={handleAddRandomClick}>ADD RANDOM</button>
             <br/>
             <p>#################</p>
-            <br/>           
+            <button onClick={handleAddRandomClick}>ADD RANDOM</button>
+            <p>#################</p>
+            <br/>
+                      
             {
-                products.map(({ id, name }) => (
-                    <>
-                        <p>Name: {name}</p>
-                        <p>Id: {id}</p>
-                        <button onClick={() => handleDeleteProductClick(id)}>DELETE</button>
-                        <button onClick={() => navigate(`/products/${id}/edit`)}>EDIT</button>
-                    </>
+                products.map(p => (
+                    <Product
+                        product={p}
+                        onEditClick={()  => navigate(`/products/${p.id}/edit`)}
+                        onDeleteClick={() => deleteProduct(p.id)}
+                    />
                 ))
             }
         </>

@@ -7,12 +7,12 @@ import { v4 as uuidv4 } from 'uuid';
 if (!localStorage.getItem('isInitialised')) {
     localStorage.setItem('isInitialised', true);
     const products = [
-        { id: uuidv4(), name: 'product1', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: Date.now() },
-        { id: uuidv4(), name: 'product2', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: Date.now() },
-        { id: uuidv4(), name: 'product3', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: Date.now() },
-        { id: uuidv4(), name: 'product4', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: Date.now() },
-        { id: uuidv4(), name: 'product5', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: Date.now() },
-        { id: uuidv4(), name: 'product6', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: Date.now() },
+        { id: uuidv4(), name: 'product1', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: new Date(Date.now()) },
+        { id: uuidv4(), name: 'product2', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: new Date(Date.now()) },
+        { id: uuidv4(), name: 'product3', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: new Date(Date.now()) },
+        { id: uuidv4(), name: 'product4', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: new Date(Date.now()) },
+        { id: uuidv4(), name: 'product5', manufacturer: {id: 1, name: 'manufacturer1'}, price: 1, expiryDate: new Date(Date.now()) },
+        { id: uuidv4(), name: 'product6', manufacturer: {id: 2, name: 'manufacturer2'}, price: 2, expiryDate: new Date(Date.now()) },
     ];
     localStorage.setItem('products', JSON.stringify(products));
 }
