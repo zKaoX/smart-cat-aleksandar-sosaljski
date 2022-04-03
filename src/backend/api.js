@@ -40,6 +40,11 @@ export function getProducts() {
     return JSON.parse(localStorage.getItem('products'));
 }
 
+export function getProduct(id) {
+    const products = getProducts();
+    return product.find(p => p === id);
+}
+
 export function addProduct({ name, manufacturerId, price, expiryDate }) {
     const manufacturer = getManufacturers().find(el => el.id === manufacturerId)
 
