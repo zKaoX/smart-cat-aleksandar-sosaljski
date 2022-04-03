@@ -11,10 +11,9 @@ function AddProduct() {
     }
 
     return (
-        <>
-            <h1>ADD PRODUCT</h1>
+        <main className='add-product-page'>
             <FormAddProduct onAddClick={handleAddClick}/>
-        </>
+        </main>
     );
 }
 

@@ -30,28 +30,37 @@ function formAddProduct({ onAddClick }) {
      * COMPONENT RETURN STATEMENT 
      */
     return (
-        <form onSubmit={handleAddClick}>
+        <form onSubmit={handleAddClick} className="form-add-product">
+            {/* NAME */}
             <label>
-                Name:
+                <span>Name:</span>
                 <input type="text" ref={nameRef} required />
             </label>
+
+            {/* MANUFACTURER */}
             <label>
-                Manufacturer:
-            <select name="cars" ref={manufacturerIdRef}>
+                <span>Manufacturer:</span>
+                <select name="cars" ref={manufacturerIdRef}>
                     {
                         manufacturers.map(({ id, name }) => <option value={id}>{name}</option>)
                     }
                 </select>
             </label>
+
+            {/* PRICE */}
             <label>
-                Price:
+                <span>Price:</span>
                 <input type="number" ref={priceRef} required />
             </label>
+
+            {/* EXPIRY DATE */}
             <label>
-                Expiry date:
+                <span>Expiry date:</span>
                 <input type="date" ref={expiryDateRef} required />
             </label>
-            <input type="submit" value="Submit" />
+
+            {/* SUBMIT */}
+            <input type="submit" value="Add Product" />
         </form>
     );
 }

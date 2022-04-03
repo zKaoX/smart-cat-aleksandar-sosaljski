@@ -88,25 +88,52 @@ body {
  /* CONTAINER - END */
 
 
+/* FORM ADD PRODUCT - START */
+.form-add-product {
+  border: 3px solid rgb(11, 125, 255);
+  border-radius: 0.2em;
+  max-width: 18.5em;
+  padding: 1em;
+}
+
+.form-add-product > * + * {
+  margin-top: 1em;
+}
+
+.form-add-product > label {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* FORM ADD PRODUCT - END */
 
 
 
 
- /**
-  * PAGES
-  */
-  .products-page > * {
-    margin-top: 2em;
-  }
 
-  .about-page {
-    border: 3px solid rgb(11, 125, 255);
-    border-radius: 0.2em;
-    margin-top: 2em;
-    padding-left: 0.5em;
-  }
+/**
+ * PAGES
+ */
+.products-page > * {
+  margin-top: 2em;
+}
 
-  .statistics-page > * {
-    margin-top: 2em;
-    margin-bottom: 1em;
-  }
+.about-page {
+  border: 3px solid rgb(11, 125, 255);
+  border-radius: 0.2em;
+  margin-top: 2em;
+  padding-left: 0.5em;
+}
+
+.statistics-page > * {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.add-product-page > * {
+  margin: 0 auto;
+}
+
+.add-product-page > * {
+  margin-top: 2em;
+}
