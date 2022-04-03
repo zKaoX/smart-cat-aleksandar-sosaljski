@@ -10,7 +10,7 @@ function Statistics() {
                           .sort((p1 ,p2) => p1.value - p2.value);
     
     return (
-        <div style={{ padding: '0px 50px' }}>
+        <div>
             <h1>STATISTICS PAGE</h1>
             
             <PieChart 

@@ -14,26 +14,29 @@ import About from './pages/About';
 import Statistics from './pages/Statistics';
 
 import Navigation from './components/Navigation';
+import Container from './components/Container';
 
 import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navigation />
-      <Routes>
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:productId/edit" element={<EditProduct />} />
-        <Route path="/products/add" element={<AddProduct />} />
+      <Container>
+        <Navigation />
+        <Routes>
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:productId/edit" element={<EditProduct />} />
+          <Route path="/products/add" element={<AddProduct />} />
 
-        <Route path="/about" element={<About />} />
-        <Route path="/statistics" element={<Statistics />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/statistics" element={<Statistics />} />
 
-        <Route
-          path="*"
-          element={<Navigate to="/products" replace />}
-        />
-      </Routes>
+          <Route
+            path="*"
+            element={<Navigate to="/products" replace />}
+          />
+        </Routes>
+      </Container>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

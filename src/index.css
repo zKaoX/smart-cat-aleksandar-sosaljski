@@ -64,3 +64,10 @@ body {
   text-decoration: underline;
 }
  /* NAVIGATION - END */
+
+ /* CONTAINER - START */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+ /* CONTAINER - END */
