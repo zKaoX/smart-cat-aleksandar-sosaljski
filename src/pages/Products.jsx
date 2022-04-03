@@ -16,30 +16,9 @@ function Products() {
         return fn;
     }, []);
 
-    function handleDeleteProductClick(id) {
-        deleteProduct(id);
-    }
-
-    function handleAddRandomClick() {
-        addProduct({ 
-            name: Math.random().toString(),
-            manufacturerId: '1',
-            price: 1,
-            expiryDate: new Date(Date.now())
-        });
-    }
-
     return (
-        <>
-            <h1>PRODUCTS</h1>
-            
-            <button onClick={() => navigate('/products/add')}>ADD</button>
-            
-            <br/>
-            <p>#################</p>
-            <button onClick={handleAddRandomClick}>ADD RANDOM</button>
-            <p>#################</p>
-            <br/>
+        <main className='products-page'>
+            <button onClick={() => navigate('/products/add')}>ADD PRODUCT</button>
                       
             {
                 products.map(p => (
@@ -50,7 +29,7 @@ function Products() {
                     />
                 ))
             }
-        </>
+        </main>
     );
 }
 

@@ -11,15 +11,14 @@ function Product({ product, onEditClick, onDeleteClick }) {
      */
     const dateString = (new Date(product.expiryDate)).toLocaleDateString();
     return (
-        <>
-            <p>Product: {product.name}</p>
-            <p>Manufacturer: {product.manufacturer.name}</p>
-            <p>Price: {product.price}&euro;</p>
-            <p>Expiry date: {dateString}</p>
-            <p>Id: {product.id}</p>
-            <button onClick={handleEditClick}>EDIT</button>
-            <button onClick={handleDeleteClick}>DELETE</button>
-        </>
+        <ul className="product">
+            <li>Product: {product.name}</li>
+            <li>Manufacturer: {product.manufacturer.name}</li>
+            <li>Price: {product.price}&euro;</li>
+            <li>Expiry date: {dateString}</li>
+            <li> <button onClick={handleEditClick}>EDIT</button> </li>
+            <li> <button onClick={handleDeleteClick}>DELETE</button> </li>
+        </ul>
     );
 }
 

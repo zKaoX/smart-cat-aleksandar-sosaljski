@@ -16,7 +16,11 @@ body {
 ::after {
   box-sizing: inherit;
 }
- 
+
+
+
+
+
 
 /**
  * COMPONENTS
@@ -65,9 +69,32 @@ body {
 }
  /* NAVIGATION - END */
 
+/* PRODUCT - START */
+.product {
+  margin: 0;
+  padding: 0.5em;
+  list-style-type: none;
+
+  border: 3px solid rgb(11, 125, 255);
+  border-radius: 0.2em;
+}
+/* PRODUCT - END */
+
  /* CONTAINER - START */
 .container {
   max-width: 1150px;
   margin: 0 auto;
 }
  /* CONTAINER - END */
+
+
+
+
+
+
+ /**
+  * PAGES
+  */
+  .products-page > * {
+    margin-top: 2em;
+  }
