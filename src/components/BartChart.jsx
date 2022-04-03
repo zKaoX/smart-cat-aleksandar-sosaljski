@@ -9,7 +9,7 @@ import {
 } from "recharts";
 
 
-function BarChartAdapter ({ data, title }) {
+function BarChartAdapter ({ data, titleTop, titleBottom }) {
     const COLORS = [
         '#1234f6',
         '#43ff22',
@@ -20,10 +20,11 @@ function BarChartAdapter ({ data, title }) {
     ];
 
     return (
-        <div>
-            <div style={{ width: '900px', height: '300px', margin: '0 auto' }}>
+        <div style={{ border: '3px solid rgb(11, 125, 255)', borderRadius: '8px'}}>
+            <h4 style={{ textAlign: 'center' }}>{titleTop}</h4>
+            <div style={{ width: '1100px', height: '300px', margin: '0 auto' }}>
                 <BarChart
-                    width={900}
+                    width={1100}
                     height={300}
                     data={data}
                     margin={{
@@ -32,12 +33,13 @@ function BarChartAdapter ({ data, title }) {
                         left: 20,
                         bottom: 5
                     }}
+                    barCategoryGap={'20%'}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                    <XAxis allowDataOverflow={true} dataKey="name" tickSize={12}/>
                     <YAxis />
                     <Legend
-                        formatter={() => <span>{title}</span>}
+                        formatter={() => <span>{titleBottom}</span>}
                     />
                     <Bar dataKey="value" fill="#8884d8" animationDuration={2500}>
                         {data.map((entry, index) => (

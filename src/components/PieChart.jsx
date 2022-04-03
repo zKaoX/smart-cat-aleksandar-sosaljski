@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, Legend } from "recharts";
 
-function PieChartAdapter({ data }) {
+function PieChartAdapter({ data, titleTop }) {
     const COLORS = [
         'rgb(255, 124, 11)',
         'rgb(11, 124, 255)',
@@ -24,7 +24,8 @@ function PieChartAdapter({ data }) {
     };
 
     return (
-        <div>
+        <div style={{ border: '3px solid rgb(11, 125, 255)', borderRadius: '8px'}}>
+            <h4 style={{ textAlign: 'center' }}>{titleTop}</h4>
             <div style={{ width: '400px', height: '400px', margin: '0 auto' }}>
                 <PieChart width={400} height={400}>
                     <Pie
