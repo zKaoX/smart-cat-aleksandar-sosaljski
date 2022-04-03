@@ -12,10 +12,8 @@ if (!localStorage.getItem('isInitialised')) {
         {id: uuidv4(), name: 'Krka'},
         {id: uuidv4(), name: 'ZORKA Pharma'},
         {id: uuidv4(), name: 'Galenika'},
-        {id: '1', name: 'Manufacturer'},
     ]
     const products = [
-        { id: uuidv4(), name: 'Hemomicin', manufacturer: manufacturers[0], price: 123, expiryDate: new Date(Date.now()) },
         { id: uuidv4(), name: 'Brufen', manufacturer: manufacturers[0], price: 400, expiryDate: new Date(Date.now()) },
         { id: uuidv4(), name: 'Aminalon', manufacturer: manufacturers[0], price: 581, expiryDate: new Date(Date.now()) },
         { id: uuidv4(), name: 'Viranto Forte', manufacturer: manufacturers[1], price: 222, expiryDate: new Date(Date.now()) },
