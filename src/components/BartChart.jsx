@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import {
     BarChart,
     Bar,
@@ -10,6 +12,8 @@ import {
 
 
 function BarChartAdapter ({ data, titleTop, titleBottom }) {
+    const [scale, setScale] = useState(getScaleFactor());
+
     const COLORS = [
         '#1234f6',
         '#43ff22',
@@ -19,13 +23,34 @@ function BarChartAdapter ({ data, titleTop, titleBottom }) {
         '#831d3a'
     ];
 
+    const WIDTH = 1100 * scale;
+    const HEIGH = 300 * scale;
+
+    useEffect(() => {
+        const handleResize = () => setScale(getScaleFactor());
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, []);
+
+    function getScaleFactor() {
+        const width = window.innerWidth;
+        if (width > 1200) { return 1; }
+        if (width > 875 && width < 1200) { return 0.8; }
+        if (width > 768 && width < 875) { return 0.71; }
+        if (width > 548 && width < 768) { return 0.5; }
+        if (width < 548) { return 0.37; }
+    }
+
     return (
         <div style={{ border: '3px solid rgb(11, 125, 255)', borderRadius: '8px'}}>
             <h4 style={{ textAlign: 'center' }}>{titleTop}</h4>
-            <div style={{ width: '1100px', height: '300px', margin: '0 auto' }}>
+            <div style={{ width: `${WIDTH}px`, height: `${HEIGH}px`, margin: '0 auto' }}>
                 <BarChart
-                    width={1100}
-                    height={300}
+                    width={WIDTH}
+                    height={HEIGH}
                     data={data}
                     margin={{
                         top: 5,
