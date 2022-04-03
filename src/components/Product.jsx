@@ -16,7 +16,7 @@ function Product({ product, onEditClick, onDeleteClick }) {
             <li>Manufacturer: {product.manufacturer.name}</li>
             <li>Price: {product.price}&euro;</li>
             <li>Expiry date: {dateString}</li>
-            <li> <button onClick={handleEditClick}>EDIT</button> </li>
+            <li> <button className="product__first-button" onClick={handleEditClick}>EDIT</button> </li>
             <li> <button onClick={handleDeleteClick}>DELETE</button> </li>
         </ul>
     );
