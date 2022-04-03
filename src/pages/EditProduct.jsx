@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 function EditProduct() {
     const params = useParams();
 
-    return <h1>EDIT PRODUCT PAGE ----- PRODUCT {params.productId}</h1>;
+    return <img width="100%" src='https://workinprogress.no/dynamic/upload/bilder/Work-In-Progress.png'/>;
 }
 
 export default EditProduct;
