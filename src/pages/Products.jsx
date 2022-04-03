@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getProducts, deleteProduct, addProduct, subscribeOnProductsChange } from '../backend/api';
 
 import Product from '../components/Product';
@@ -23,7 +23,7 @@ function Products() {
     function handleAddRandomClick() {
         addProduct({ 
             name: Math.random().toString(),
-            manufacturer: {id: 1, name: 'manufacturer1'},
+            manufacturerId: '1',
             price: 1,
             expiryDate: new Date(Date.now())
         });
