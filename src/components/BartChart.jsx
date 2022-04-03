@@ -45,7 +45,7 @@ function BarChartAdapter ({ data, titleTop, titleBottom }) {
     }
 
     return (
-        <div style={{ border: '3px solid rgb(11, 125, 255)', borderRadius: '8px'}}>
+        <div style={{ border: '3px solid rgb(11, 125, 255)', borderRadius: '0.2em'}}>
             <h4 style={{ textAlign: 'center' }}>{titleTop}</h4>
             <div style={{ width: `${WIDTH}px`, height: `${HEIGH}px`, margin: '0 auto' }}>
                 <BarChart

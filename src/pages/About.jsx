@@ -1,9 +1,9 @@
 function About() {
     return (
-        <article>
+        <main className="about-page">
             <p>Author: Aleksandar Sosaljski</p>
             <p>Version: v1.1</p>
-        </article>
+        </main>
     );
 }
 

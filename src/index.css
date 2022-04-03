@@ -98,3 +98,10 @@ body {
   .products-page > * {
     margin-top: 2em;
   }
+
+  .about-page {
+    border: 3px solid rgb(11, 125, 255);
+    border-radius: 0.2em;
+    margin-top: 2em;
+    padding-left: 0.5em;
+  }
